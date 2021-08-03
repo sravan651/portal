@@ -1,31 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="FrameworkTesting" parallel="tests">
-	    <test name="DemoTest1">
-	   <!--  <parameter name="baseUrl" value="https://preprodportal.sunnxt.in/" /> -->
-		 <parameter name="baseUrl" value="https://www.sunnxt.com/"/>  
-	     <parameter name="browser" value="chrome"></parameter>  
-        <parameter name="environment" value="local" />
+<suite name="Cucumber Suite" parallel="tests" thread-count='3'>
+	<!--  All tests will show in Report  -->
+	   <test verbose="1" name="Cucumeber Test">
+		<parameter name="browserName" value="chrome" />
 		<classes>
-	         <class name="demo.scripts.Sunnxtportal2" />   
-	    
-	      </classes>  
-	 </test>   
-	   <!--  <test name="DemoTest2">
-		 <parameter name="baseUrl" value="https://www.sunnxt.com/"/> 
-	     <parameter name="baseUrl" value="https://preprodportal.sunnxt.in/" />
-	    <parameter name="browser" value="firefox"></parameter>  
-        <parameter name="environment" value="local" />
-		 <classes>
-		  <class name="demo.scripts.Sunnxtportal2" />  
-		
-         </classes> 
-	 </test>    --> 
-	
+			<class name="stepdefs.SunNxtRunner" />
+		</classes>
+	</test>  
+	      <test verbose="1" name="Cucumeber TestFF">
+		<parameter name="browserName" value="firefox" />
+		<classes>
+			<class name="stepdefs.SunNxtRunner" />
+		</classes>
+	</test>
+ 	  <test verbose="1" name="Cucumeber Test edge">
+		<parameter name="browserName" value="edge" />
+		<classes>
+			<class name="stepdefs.SunNxtRunner" />
+		</classes>
+	</test>  
+   
 </suite>
-
-
-
-
-
- 
